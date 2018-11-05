@@ -1,0 +1,706 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 清浮动 */
+.clearfix::after{
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    min-height: 100%;
+}
+.container{
+    width: 100%;
+    min-height: 756px;
+    background-color: azure;
+}
+
+.cenCon{
+    width: 100%;
+    min-height: 900px;
+    margin: 0 auto;
+}
+.main{
+    width: 100%;
+    height: 100%;
+
+    /* flex布局 */
+    display: flex;
+}
+
+/* 宽高等初始设置 */
+/* 左侧工具 */
+.leftTool{
+    width:100px;
+    height:900px;
+    background:rgba(29,37,49,1);
+    box-sizing: border-box;
+    padding: 20px;
+
+    /* 给Setting定位 */
+    position: relative;
+}
+/* 中侧消息 */
+.midMenu{
+    width: 240px;
+    height: 900px;
+    background: #eff3f6;
+    box-sizing: border-box;    
+    padding: 20px;
+
+    /* 给Show定位 */
+    position: relative;
+}
+
+/* 右侧人物 */
+.rightMain{
+    flex: 1;
+    height: 900px;
+    background: #fff;
+    box-sizing: border-box; 
+}
+
+
+
+/* 内容 */
+/* 左侧工具 */
+.leftTool .tools ul li{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    
+    /* 图标元素居中 */
+    text-align: center;
+    line-height: 60px;
+    font-size: 0;
+    /* vertical-align: middle; */
+    /* position: relative; */
+}
+.leftTool .tools ul li img{
+    vertical-align: middle;
+    
+    /* display: inline; */
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); */
+}
+.leftTool .tools ul li:nth-child(1){
+    background: url('./imgs/Base1.png') no-repeat center;
+}
+.leftTool .tools ul li:nth-child(2){
+    background: url('./imgs/Base2.png') no-repeat center;
+}
+.leftTool .tools ul li:nth-child(3){
+    background: url('./imgs/Base3.png') no-repeat center;
+}
+.leftTool .tools ul li:nth-child(4){
+    background: url('./imgs/Base4.png') no-repeat center;
+}
+
+.leftTool .bottomMenu{
+    width: 80%;
+    position: absolute;
+    bottom: 10px;
+    left: 26px;
+}
+.leftTool .bottomMenu ul{
+    margin: 0 auto;
+}
+.leftTool .bottomMenu ul li:not(:last-child){
+    float: left;
+    margin-right: 16px;
+}
+
+/* 中侧消息 */
+.midMenu .topSelec .baseDl{
+    /* Dl 的基本样式 */
+    padding-bottom: 10px;
+    border-bottom: rgb(42, 53, 71, 0.4) 2px solid;
+}
+.midMenu .topSelec .baseDl:not(:first-child){
+    margin-top: 20px;
+}
+.midMenu .topSelec .baseDl dt{
+    font-family: "ProximaNova";
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 40px;
+    color: #5B6779;
+
+    background: url(./imgs/Settings.png) no-repeat right;
+}
+.midMenu .topSelec .baseDl dd{
+    font-family: "ProximaNova";
+    font-size: 14px;
+    text-align: left;
+    line-height: 36px;
+    color: #B7C0CD;
+
+    position: relative;
+}
+.midMenu .topSelec .baseDl span{
+    display: inline-block;
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 32px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    background: url('./imgs/Icon.png') no-repeat center;
+}
+
+.midMenu .topSelec .baseDl strong{
+    position: absolute;
+    display: none;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;
+    background: url('./imgs/Base3.png') no-repeat center,
+                url('./imgs/_.png') no-repeat center;
+    background-size: 24px 24px;
+    border-radius: 50%;
+}
+
+.midMenu .topSelec .baseDl .mes{
+    display: block;
+}
+.midMenu .topSelec .baseDl .wraning{
+    display: block;
+}
+
+.secondDl dd{
+    text-indent: 2em;
+}
+.secondDl dd:nth-of-type(1){
+    background: url('./imgs/Books.png') no-repeat left;
+}
+.secondDl dd:nth-of-type(2){
+    background: url('./imgs/Tutorials.png') no-repeat left;
+}
+.secondDl dd:nth-of-type(3){
+    background: url('./imgs/Stocks.png') no-repeat left;
+}
+.secondDl dd:nth-of-type(4){
+    background: url('./imgs/Infographics.png') no-repeat left;
+}
+
+.midMenu .bottomShow{
+    width: 100%;
+    position: absolute;
+    bottom: 14px;
+}
+.midMenu .bottomShow>span{
+    font-family: "ProximaNova";
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+.midMenu .bottomShow>span:not(:first-child){
+    padding-left: 10px;
+}
+
+.midMenu .bottomShow p{
+    margin-top: 14px;
+    width: 190px;
+    height: 4px;
+    background: rgba(71, 83, 100, 0.3);
+    border-radius: 2px;
+    position: relative;
+}
+.midMenu .bottomShow p span{
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #7F5BE6;
+}
+
+
+
+/* 右侧头部 */
+.rightMain header{
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    padding: 14px 30px 16px;
+    border-bottom: 1px solid rgba(157, 160, 160, 0.3);
+}
+.rightMain header h1{
+    float: left;
+    font-family: "ProximaNova-Regular";
+    font-size: 24px;
+    color: #354052;
+    line-height: 50px;
+    text-align: left;
+}
+.rightMain header .user{
+    float: right;
+}
+
+.rightMain .user>span{
+    margin-right: 16px;
+}
+.rightMain .user .avator{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url('./imgs/person.png') no-repeat center;
+    vertical-align: middle;
+}
+.rightMain .user .avatorMess{
+    display: inline-block;
+    width: 100px;
+    max-height: 50px;
+    vertical-align: middle;
+}
+.avatorMess a{
+    font-family: "ProximaNova-Semibold";
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #2399F1;
+}
+.avatorMess span{
+    font-family: "ProximaNova-Semibold";
+    font-size: 14px;
+    text-align: left;
+    color: #B5B5B5;
+}
+.rightMain .user .listShow{
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    background: url('./imgs/dropdown.png') no-repeat center;
+    vertical-align: middle;
+}
+
+/* 右侧主体 */
+.rightMain section{
+    display: flex;
+    background-color: #fff;
+}
+/* 右侧主体的左边 */
+.rightMain .leftMessage{
+    width: 360px;
+    min-height: 700px;
+    /* background-color: red; */
+}
+.rightMain .rightMessage{
+    flex: 1;
+}
+
+.leftMessage .topSearch{
+    width: 100%;
+    height: 64px;
+    box-sizing: border-box;
+    padding: 15px 30px 18px;
+    border-bottom: 1px solid rgba(160, 161, 161, 0.3);
+    border-right: 1px solid rgba(160, 161, 161, 0.3);
+}
+.leftMessage .topSearch form{
+    position: relative;
+}
+.leftMessage .topSearch form input{
+    width: 100%;
+    height: 30px;
+    background: none;
+    border: 1px #E5E8EE solid;
+    border-radius: 4px;
+    text-indent: 1em;
+}
+.leftMessage .topSearch form input::-webkit-input-placeholder{
+    font-family: "ProximaNova-Semibold";
+    font-size: 12px;
+    font-weight: bold;
+    color: #9FA9BA;
+}
+.leftMessage .topSearch form input::-moz-input-placeholder{
+    font-family: "ProximaNova-Semibold";
+    font-size: 12px;
+    font-weight: bold;
+    color: #9FA9BA;
+}
+.leftMessage .topSearch form input::-ms-input-placeholder{
+    font-family: "ProximaNova-Semibold";
+    font-size: 12px;
+    font-weight: bold;
+    color: #9FA9BA;
+}
+.leftMessage .topSearch form img{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+
+/* 右侧主体的左边的列表 */
+.mainFri{
+    width: 100%;
+    height: 100%; 
+}
+.mainFri .friendsList{
+    width: 100%;
+    max-height: 756px;
+    overflow: auto;
+}
+/* 隐藏滚动条但还能滚动 */
+.mainFri>ul::-webkit-scrollbar {
+    display:none
+}
+
+.freiendsListItem{
+    width: 100%;
+    min-height: 130px;
+    background-color: #fff;
+    padding: 15px 12px 22px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(160, 161, 161, 0.3);
+    border-right: 1px solid rgba(160, 161, 161, 0.3);
+}
+.freiendsListItem .topFl{
+    min-height: 46px;
+}
+.topFl>span:first-child{
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin-right: 16px;
+    background: url('./imgs/person.png') no-repeat center;
+    vertical-align: middle;
+}
+.topFl{
+    margin-bottom: 10px;
+}
+.topFl>p{
+    display: inline-block;
+    vertical-align: middle;
+}
+.topFl>p a{
+    display: block;
+    font-family: "ProximaNova-Semibold";
+    font-size: 16px;
+    font-weight: bold;
+    color: #585D68;
+    line-height: 22px;
+    text-align: left;
+}
+.topFl>p span{
+    display: block;
+    font-family: "ProximaNova-Semibold";
+    font-size: 14px;
+    font-weight: bold;
+    color: #B5B5B5;
+    line-height: 20px;
+    text-align: left;
+}
+.topFl>span:last-child{
+    float: right;
+    height: 10px;
+    font-size: 14px;
+    color: #7F8FA4;
+    padding-top: 4px;
+    text-align: right;
+}
+.bottomFl{
+    position: relative;
+}
+.bottomFl>p{
+    width: 290px;
+    font-size: 12px;
+    color: #585D68;
+    line-height: 16px;
+    text-align: left;;
+}
+.bottomFl>span{
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url(./imgs/Base1.png) no-repeat center;
+    background-size: 24px 24px;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* 增加事件 */
+.freiendsListItem:active{
+    border-left: #2399F1 2px solid;
+}
+.freiendsListItem:active .topFl>p a{
+    color: #2399F1;
+    text-indent: 1em;
+    position: relative;
+}
+.freiendsListItem:active  .topFl>p a::before{
+    display: block;
+    content: "\200B";
+    width: 8px;
+    height: 8px;
+    background-color: #2399F1;
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+}
+
+
+/* 右侧的下方的右侧 */
+.rightMessage .topShow{
+    width: 100%;
+    height: 64px;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(160, 161, 161, 0.3);
+    background-color: #fff;
+}
+.rightMessage .topShow>span:first-child{
+    display: inline-block;
+    font-family: "ProximaNova-Semibold";
+    font-size: 18px;
+    color: #585D68;
+    text-align: left;
+    line-height: 38px;
+
+    position: relative;
+}
+.rightMessage .topShow>span:first-child::after{
+    content: "\200B";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #1BB934;
+    position: absolute;
+    top: 16px;
+    right: -16px;
+}
+
+
+.rightMessage .topShow .rightS{
+    float: right;
+}
+.rightS ul, .rightS span{
+    float: left;
+}
+
+.rightS>ul{
+    padding: 1px;
+    box-sizing: border;
+}
+
+.rightS>ul li{
+    float: left;
+    width: 35px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    top: 1px;
+    left: 2px;
+}
+.rightS>ul:first-of-type{
+    width: 109px;
+    height: 32px;
+    background: url('./imgs/Divider3.png') no-repeat center;
+}
+.rightS>ul:last-of-type{
+    width: 73px;
+    height: 32px;
+    background: url('./imgs/Divider2.png') no-repeat center;
+    margin-left: 15px;
+}
+.rightS>ul li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.rightS>span{
+    width: 50px;
+    height: 32px;
+    line-height: 32px;
+    font-family: "ProximaNova-Semibold";
+    font-size: 14px;
+    color: #56688A;
+    margin-left: 45px;
+}
+
+
+.mainShow{
+    overflow: auto;
+    max-height: 756px;
+}
+/* 隐藏滚动条但还能滚动 */
+.rightMessage>div[class*="mainShow"]::-webkit-scrollbar {
+    display:none
+}
+
+.mainList{
+    width: 100%;
+    padding: 25px 60px 30px 30px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-bottom: 1.4px solid rgba(160, 161, 161, 0.3); 
+    
+    position: relative;
+}
+
+
+.mainList .bottomTime{
+    display: inline-block;
+    padding: 4px 14px;
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+
+    font-size: 14px;
+    color: #7F8FA4;
+    background-color:#fff;
+    z-index: 9999;
+}
+.mainListItem:not(:last-child){
+    width: 100%;
+    margin-bottom: 22px;
+}
+.mainListItem>span{
+    float: left;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: url('./imgs/person.png') no-repeat center;
+    margin-right: 20px;
+}
+/* 清浮动 */
+.mainListItem>div{
+    overflow: hidden;
+}
+
+
+/* 1 */
+.listContent>span:first-child{
+    font-family: "ProximaNova-Semibold";
+    font-size: 16px;
+    font-weight: bold;
+    color: #585D68;
+    padding: 5px 0 10px;
+}
+.listContent>span:nth-child(2){
+    font-family: "ProximaNova-Semibold";
+    font-size: 14px;
+    font-weight: bold;
+    color: #7F8FA4;
+    padding: 5px 0 10px 10px;
+}
+.listContent>p{
+    font-family: "ProximaNova-Regular";
+    font-size: 14px;
+    font-weight: 400;    
+    line-height: 20px;
+    color: #585D68;
+}
+
+
+
+/* 2 */
+.imgContent{
+    margin-top: 16px;
+}
+.imgContent>li{
+    float: left;
+    margin-right: 12px;
+    width: 156px;
+    height: 100px;
+    background-color: #fff;
+
+    position: relative;
+}   
+.imgContent>li>a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.imgContent>li>p{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    line-height: 130px;
+    text-align: center;
+}
+.imgContent>li>p>span{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: url('./imgs/Open-icon.png') no-repeat center;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 悬浮事件 */
+.imgContent>li:hover  .insideP{
+    display: block;
+}
+
+
+
+/* 3 */
+.messContent{
+    margin-top: 16px;
+}
+.messContent>p{
+    box-sizing: border;
+    border: 1px solid #DFE3E9;
+    border-radius: 4px;
+    height: 54px;
+    line-height: 54px;
+    text-indent: 75px;
+    font-family: "ProximaNova-Regular";
+    font-size: 14px;
+    font-weight: 400;
+    color: #585D68;
+
+    background: url('./imgs/Base6.png') no-repeat left;
+}
+
