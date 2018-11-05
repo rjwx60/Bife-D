@@ -1,0 +1,755 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style-type: none;
+}
+
+html {
+    /* 居然可以！ */
+    height: 1px;
+    min-height: 1000px;
+}
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;  
+}
+
+/* 清浮动 */
+.clearfix::after{
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+
+
+
+/* TopContent */
+header{
+    width: 100%;
+    height: 100%; 
+    background: url(./imgs/bg1.png) no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+header .container{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.45);
+}
+
+/* TopContent Center */
+header .cenCon{
+    width: 50%;
+    /* 居中 */
+    margin: 0 auto;
+    /* 相对于父级宽度 */
+    padding: 10% 0;
+}
+/* hello world */
+header .cenCon h1{
+    text-align: center;
+    font-size: 68px;
+    font-family: "Montserrat-ExtraLight";
+    font-weight: 200;
+    color: #fff;
+}
+/* paragraph */
+header .cenCon .helloText{
+    width: 100%;
+    padding: 36px 0;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+header .cenCon .helloText span{
+    display: inline-block;
+    vertical-align: middle;
+
+    font-size: 18px;
+    font-family: "Montserrat-ExtraLight";
+    color: #fff;
+    line-height: 1.6;
+    opacity: .5;
+}
+/* create your account */
+header .cenCon .helloBox{
+    width: 100%;
+    height: 250px;
+    border: 1px solid rgba(256,256,256,0.5);
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding: 40px 70px 35px 70px;
+    margin-top: 64px;
+}
+header .cenCon .helloBox h3{
+    text-align: center;
+    font-size: 20px;
+    font-family: "Montserrat-Light";
+    line-height: 28px;
+    color: #fff;
+}
+header .cenCon .helloBox span{
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Montserrat-Light";
+    color: #fff;
+    line-height: 2.4;
+    opacity: .5;    
+}
+header .cenCon .helloBox .helloInput{
+    width: 100%;
+    margin-top: 36px;
+    text-align: center;
+}
+.helloInput input{
+    display: inline-block;
+    margin-right: 20px;
+    height: 34px;
+    line-height: 34px;
+    background: none;
+    vertical-align: middle;
+}
+
+.helloInput input:not(:nth-child(3)){
+    border: 1px solid #fff;
+    border-radius: 2px;
+    opacity: .6;
+    transition: all .4s;
+    width: 36%;
+    text-indent: 2em;
+}
+.helloInput input:not(:nth-child(3)):focus{
+    outline: none;
+    border: 1px solid #fff;    
+    opacity: 1;
+}
+/* input placeholder style */
+.helloInput input::-webkit-input-placeholder{
+    opacity: 1;
+    color: #fff;
+}
+.helloInput input::-moz-input-placeholder{
+    opacity: 1;
+    color: #fff;
+}
+.helloInput input::-ms-input-placeholder{
+    opacity: 1;
+    color: #fff;
+}
+/* sign up button */
+.helloInput input[type="button"]{
+    width: 10%;
+    height: 34px;
+    background-color: #fff;
+    box-shadow:none;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Montserrat-Light";
+    color: #000000;
+}
+.helloInput input[type="button"]:focus{
+    outline: none;
+}
+
+
+
+
+/* SectionContent */
+section[class*="firstContent"] .container{
+    width: 100%;
+    min-height: 600px;
+    background-color: #fff;
+}
+
+section[class*="firstContent"] .container .cenCon{
+    width: 50%;
+    margin: 0 auto;
+
+    /* 针对其内的所有元素 */
+    text-align: center;
+    padding: 50px 0;
+}
+section[class*="firstContent"] .container .readMeTitle{
+    display: inline-block;
+    padding-bottom: 20px;
+
+    font-size: 14px;
+    font-family: "Montserrat";
+    color: #000;
+}
+section[class*="firstContent"] .container .cenCon h2{
+    margin-bottom: 20px;
+    /* 设置多行文本居中-父级 */
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 50px;
+
+    /* background-color: red; */
+    /* width: 100%; */
+    width: 50%;
+    /* 如果文字内容不足宽度大小，会居于左侧；如果宽度变小，才居中！ */
+    /* 还有个奇怪的点，就是对其设置width值，不管怎样，都会占满整行，除非设置100% 或 0px */
+    /* 这么奇怪的显示是不是跟 displayTalbeCell 有关 */
+}
+section[class*="firstContent"] .container h2 span{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}   
+
+section[class*="firstContent"] .readMeShow, section[class*="firstContent"] .readMeShow ul{
+    width: 100%;
+    min-height: 200px;
+}
+
+.readMeShow ul{
+    /* 清浮动（暂时用不到） */
+    *zoom: 1;
+    text-align: center;
+}
+.readMeShow ul::after{
+    display: block;
+    content: "\200B";
+    height: 0;
+    clear: both;
+}
+.readMeShow ul li{
+    display: inline-block;
+    /* float: left; */
+    width: 40%;
+    min-height: 100px;
+    padding: 20px;
+    vertical-align: top;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.readMeShow ul li>p{
+    float: left;
+    margin-right: 14px;
+    vertical-align: top;
+    max-width: 50px;
+    text-align: center;
+}
+.readMeShow ul li div{
+    overflow: hidden;
+    vertical-align: top;    
+}
+.readMeShow ul li div span, .readMeShow ul li div p{
+    float: left;
+}
+.readMeShow ul li div span{
+    font-size: 20px;
+    font-family: "Montserrat";
+    color: #141414;
+    padding-bottom: 12px;
+}
+.readMeShow ul li div p{
+    word-wrap: break-word;
+    text-align: left;
+    /* word-break: break-all; */
+
+    font-size: 16px;
+    font-family: "Montserrat";
+    color: rgba(20 20 20, 0.7)
+}
+
+
+
+
+
+/* SecondContent */
+section[class*="secondContent"]{ 
+    width: 100%;
+    height: 800px;    
+    background-color: #fff;
+    background: url('./imgs/bg2.png') no-repeat;
+    background-size: cover;
+}
+section[class*="secondContent"] .container{
+    width: 100%;
+    min-height: 800px;
+    /* 这句话将Screen突出的部分盖掉 */
+    overflow: hidden;    
+}
+section[class*="secondContent"] .container .cenCon{
+    width: 50%;
+    min-height: 800px;
+    height: 100%;
+    margin: 0 auto;  
+    box-sizing: border-box;
+    /* 内边距 */
+    padding: 100px 0;
+    /* 相对位置 */
+    position: relative;
+}
+/* Left Side */
+section[class*="secondContent"] .container .leftCon{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+/* Right Side */
+section[class*="secondContent"] .container .rightCon{
+    position: absolute;
+    right: -844px;
+    /* bottom: 0; */
+    width: 844px;
+    height: 600px;
+    background-color: red;
+    background: url('./imgs/Ipad-bg.png') no-repeat;
+}
+section[class*="secondContent"] .container .rightCon img{
+    position: relative;
+    top: 30px;
+    left: 60px;
+}
+
+section[class*="secondContent"] .leftCon h3{
+    width: 360px;
+    height: 140px;
+    font-family: "Montserrat";
+    font-size: 42px;
+    font-weight: 200;
+    color: #fff;
+    padding: 80px 0 50px;
+}
+section[class*="secondContent"] .leftCon p{
+    width: 360px;
+    height: 130px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.56;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
+    padding-bottom: 60px;
+}
+
+section[class*="secondContent"] .leftCon div form input{
+    /* float: left; */
+    display: inline-block;
+    width: 240px;
+    height: 60px;
+    border-radius: 2px;
+    background-color: #ffffff;
+
+    font-family: "Montserrat";
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1.8px;
+    text-align: center;
+    color: #141414;
+
+    margin-right: 30px;
+}
+
+
+
+
+/* ThirdContent */
+section[class*="thirdContent"]{
+    width: 100%;
+    min-height: 580px;
+    background-color: #fff;
+}
+section[class*="thirdContent"] .container{
+    width: 100%;
+    height: 100%;
+}
+section[class*="thirdContent"] .container .cenCon{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+section[class*="thirdContent"] .cenCon p:nth-child(1){
+    width: 100%;
+    height: 40px;
+    font-family: "Montserrat";
+    font-size: 42px;
+    font-weight: 200;
+    line-height: 1.24;
+    text-align: center;
+    color: #141414;
+    padding-top: 100px;
+}
+
+section[class*="thirdContent"] .cenCon ul{
+    width: 100%;
+    margin-top: 80px;
+}
+section[class*="thirdContent"] .cenCon ul li{
+    float: left;
+    width: 250px;
+    height: 200px;
+}
+section[class*="thirdContent"] .cenCon ul li:not(:last-child){
+    margin-right: 100px;
+}
+section[class*="thirdContent"] .cenCon ul li p{
+    opacity: 0.7;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.63;
+    text-align: center;
+    color: rgba(20, 20, 20, 0.7);
+    margin-top: 44px;
+}
+
+/* PictureContent */
+section[class*="picContent"]{
+    width: 100%;
+    min-height: 1000px;
+}
+section[class*="picContent"] .container{
+    width: 100%;
+    height: 100%;
+    padding: 80px;
+    box-sizing: border-box;
+}
+section[class*="picContent"] .container .cenCon{
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+}
+.picConUl li:not(:last-child){
+    margin-bottom: 80px;
+}
+.picConUl li img, .picConUl li div{
+    float: left;
+}
+
+.picConUl li img{
+    width: 570px;
+    height: 350px;
+}
+.picConUl li:nth-child(1) img{
+    margin-right: 70px;
+}
+.picConUl li:nth-child(2) img{
+    margin-left: 80px;
+}
+.picConUl div{
+    width: 320px;
+    min-height: 200px;
+    padding-top: 80px;
+}
+.picConUl div span{
+    display: inline-block;
+    font-family: "Montserrat";
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: left;
+    padding-bottom: 30px;
+}
+.picConUl div p{
+    opacity: 0.7;
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 1.75;
+    text-align: left;
+    color: rgba(20, 20, 20, 0.7);
+}
+
+
+
+
+
+/* PeopleContent */
+section[class*="peopleContent"]{
+    width: 100%;
+    min-height: 1000px;
+}
+.peopleContent .container{
+    width: 100%;
+    height: 100%;
+}
+.peopleContent .cenCon{
+    width: 70%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 100px 0;
+}
+.peopleContent .cenCon .peopleTop{
+    width: 100%;
+}
+
+.peopleContent .cenCon .peopleTop p{
+    text-align: center;
+}
+.peopleContent .cenCon .peopleTop p:nth-child(1){
+    min-height:30px;
+    font-size:42px;
+    font-family:"Montserrat-ExtraLight";
+    color:rgba(20,20,20,1);
+    line-height:52px;
+    margin-bottom: 35px;
+}
+.peopleContent .cenCon .peopleTop p:nth-child(2){
+    width: 695px;
+    height:46px;
+    font-size:18px;
+    font-family:"Montserrat-ExtraLight";    
+    color:rgba(20,20,20,1);
+    line-height:28px;
+    margin: 0 auto 63px auto;
+}
+.peoples{
+    width: 96%;
+    margin: 0 auto;
+}
+.peoples>ul{
+    width: 90%;
+    min-height: 400px;
+    margin: 0 auto;
+}
+.peoples>ul>li{
+    float: left;
+    width: 470px;
+    height: 340px;
+    position: relative;
+
+}
+.peoples>ul>li:not(:last-child){
+    margin: 0 30px 30px 0;
+}
+.peoples>ul>li>img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.peoples>ul>li>div{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(20,20,20,1);
+    opacity:0.65;
+    border-radius:2px;
+    box-sizing: border-box;
+}
+.peoples>ul>li:hover .insideDiv{
+    display: block;
+}
+.insideDiv{
+    transition: all .4s;    
+}
+
+.insideDiv span{
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+.insideDiv span:first-child{
+    min-height:16px;
+    font-size:20px;
+    font-family:Montserrat-Light;
+    color:rgba(255,255,255,1);
+    line-height:32px;
+    margin-top: 110px;
+}
+.insideDiv span:last-of-type{
+    min-height:9px;
+    font-size:12px;
+    font-family:Montserrat-Light;
+    color:rgba(255,255,255,1);
+    line-height:28px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.insideDiv ul{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+.insideDiv ul li{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 51px;
+    height: 54px;
+    line-height: 56px;
+    border: 1px solid rgba(256,256,256,0.2);
+    border-radius: 50%;
+}
+.insideDiv ul li:not(:last-child){
+    margin-right: 30px;
+}
+
+
+
+
+/* lastSection */
+.lastContent{
+    width: 100%;
+    min-height: 700px;
+}
+.lastContent .container{
+    width: 100%;
+    height: 100%;
+}
+.lastContent .conCen{
+    width: 60%;
+    padding: 70px;
+    margin: 0 auto;
+}
+.leftSi{
+    width: 470px;
+    height: 560px;
+    border: 1px solid rgba(20,20,20,1);
+    /* opacity: 0.6; */
+    border-radius: 10px;
+    float: left;
+}
+.leftSi p{
+    min-height: 12px;
+    font-size: 16px;
+    font-family: "Montserrat-Light";
+    color: #141414;
+    line-height: 32px;
+    padding: 50px 0 48px;
+    text-align: center;
+}
+.leftSi form{
+    text-align: center;
+}
+.leftSi form input:not(:last-child){
+    width: 370px;
+    height: 50px;
+    border: 2px solid rgba(38,35,33,1);
+    opacity: 0.2;
+    border-radius: 6px;
+    margin: 0 auto 30px;
+    background: none;
+    text-indent: 2em;
+}
+
+.leftSi form input::-webkit-input-placeholder{
+    color: #141414;
+    font-size: 16px;
+}
+.leftSi form input::-moz-input-placeholder{
+    color: #141414;
+    font-size: 16px;
+}
+.leftSi form input::-ms-input-placeholder{
+    color: #141414;
+    font-size: 16px;
+}
+
+.leftSi form input:last-child{
+    width: 370px;
+    height: 50px;
+    background:rgba(20,20,20,1);
+    border-radius: 2px;
+    opacity: 1;
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+.leftSi form textarea{
+    width: 370px;
+    height: 144px;
+    border: 2px solid rgba(38,35,33,.4);
+    border-radius: 2px;
+    padding: 20px;
+    box-sizing: border-box;
+    resize: none;
+    margin-bottom: 30px;
+}
+
+.rightSi{
+    float: right;
+    width: 400px;
+    height: 560px;
+}
+
+.rightSi>strong{
+    display: inline-block;
+    padding-top: 30px;
+    font-size: 42px;
+    line-height: 120px;
+}
+.rightSi>p{
+    min-height: 68px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: left;
+    padding-bottom: 70px;
+}
+.rightSi li{
+    min-height: 50px;
+    padding-bottom: 14px;
+}
+.rightSi li img{
+    float: left;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+.rightSi li p{
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+
+
+/* footer */
+footer{
+    width: 100%;
+    min-height: 420px;
+    background-color: #141414;
+}
+footer .container{
+    width: 100%;
+    height: 100%;
+}
+footer .cenCon{
+    width: 66%;
+    min-height: 420px;    
+    margin: 0 auto;
+    padding-top: 88px;
+    box-sizing: border-box;
+}
+
+footer dl:not(:last-child){
+    float: left;
+    margin-right: 120px;
+    max-width: 250px;
+}
+footer dl dt{
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 2.1px;
+    color: #fff;
+}
+footer dl dd{
+    font-size: 16px;
+    line-height: 46px;
+    letter-spacing: 2.1px;
+    text-align: left;
+    color: rgba(255,255,255,.3);
+}
+footer dl li{
+    display: inline-block;
+
+}
