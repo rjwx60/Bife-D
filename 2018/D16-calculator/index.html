@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        window.onload = function(){
+            // 按钮节点
+            var Add = document.getElementById('add-btn'),
+                Minus = document.getElementById('minus-btn'),
+                Times = document.getElementById('times-btn'),
+                Divide = document.getElementById('divide-btn');
+            
+            // 展示节点
+            var result = document.getElementById('result');
+
+            // 数据源节点 不能写在外面，写死了
+            // var number1 = parseInt(document.getElementById('first-number').value);
+            // var number2 = parseInt(document.getElementById('second-number').value);
+            
+            Add.onclick = function(){
+                var number1 = parseInt(document.getElementById('first-number').value);
+                var number2 = parseInt(document.getElementById('second-number').value);
+                result.innerHTML = number1 + number2;
+            }
+            Minus.onclick = function(){
+                var number1 = parseInt(document.getElementById('first-number').value);
+                var number2 = parseInt(document.getElementById('second-number').value);
+                result.innerHTML = number1 - number2;
+            }
+            Times.onclick = function(){
+                var number1 = parseInt(document.getElementById('first-number').value);
+                var number2 = parseInt(document.getElementById('second-number').value);
+                result.innerHTML = number1 * number2;
+            }
+            Divide.onclick = function(){
+                var number1 = parseInt(document.getElementById('first-number').value);
+                var number2 = parseInt(document.getElementById('second-number').value);
+                result.innerHTML = number1 / number2;
+            }
+            
+        }
+    </script>
+</body>
+</html>
